@@ -1,0 +1,57 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Alex{% endblock %}
+
+{% block content %}
+  <div id="imagebox" ="" style=" background: linear-gradient(to bottom, #123e5c, #7bdef8); text-align: center;">
+  	<img src="/static/images/bck.jpg" style="height: 370px; width: 55%;  box-shadow: 0px 0px 0px #123e5c;">
+  </div>
+    <div class="jumbotron" style="text-align: center; padding: 5px 2px 5px 2px">
+  <h2> Meet Alex</h2>
+  <p> Making the smart home available for everyone</p>
+</div>
+  <div class="container">
+   <div class="panel-body container">
+   <div class="col">
+  	<h4 class="text-info" style="padding-bottom: 3px"> Map your gestures to voice commands </h4>
+	<table width="100%" class="table table-striped text-centered table-hover">
+		<tr>
+		<th> Gesture </th>
+		<th> Command </th>
+		<th> </th>
+	</tr>
+	{% for  key, value in table.iteritems()%}
+		<tr> <td>{{key}}</td> 
+			<td> {{value}} </td> 
+			<td class="col-md-4"> <a class="btn btn-primary btn-block" href={{url_for('modify_gesture',gesture=key)}}> Modify {{key}} </a> </td>
+		</tr>
+	{% endfor %}
+	</table>
+</div>
+<!--  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"></div>
+    </div>
+    <div class="modal-dialog">
+        <div class="modal-content"></div>
+    </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true" class="">×   </span><span class="sr-only">Close</span>
+
+                </button>
+                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+</div>
+</div>
+</div>
+{% endblock %}
